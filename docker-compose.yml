@@ -1,0 +1,12 @@
+version: '3'
+services:
+  app:
+    build:
+      context: ./
+    container_name: namesilo_letsencrypt_app
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+    volumes:
+      - ./config.py:/app/config.py
+      - ./letsencrypt:/etc/letsencrypt
