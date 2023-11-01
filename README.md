@@ -31,3 +31,7 @@ Now you have certificate files generated inside `letsencrypt` folder, you can us
 
 ### Renewal of certificates
 Certificates are renewed automatically with certbot renew command and cronjob. It's baked into this Docker image so you don't have to do anything.
+
+---
+
+Credit to [ethauvin/namesilo-letsencrypt](https://github.com/ethauvin/namesilo-letsencrypt) for the under the hood heavylifting.
