@@ -22,7 +22,8 @@ docker-compose up -d
 
 ### Generate certificates for the first time
 ```sh
-docker-compose exec app ./namesilo-certbot.sh --email me@blue.planet -d "example.com"
+docker-compose exec app sh
+./namesilo-certbot.sh --email me@blue.planet -d "example.com"
 ```
 This command will generate certificate key files under `letsencrypt` folder (specified in the docker compose volume section). The script will take 60 minutes to finish execution (due to Namesilo's DNS propagation taking approximately 60 minutes at the time of writing this. Feel free to adjust the waiting minutes appropriately in `config.py`).
 
