@@ -7,6 +7,7 @@ COPY ./cronjob /usr/local/etc/cronjob
 
 WORKDIR /app
 COPY . ./
+COPY ./config.py /app/namesilo-letsencrypt-0.9.2/config.py
 RUN chmod +x /app/entrypoint.sh
 
 ENTRYPOINT ["/bin/sh","/app/entrypoint.sh"]
