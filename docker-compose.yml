@@ -1,12 +1,16 @@
 version: '3'
 services:
   app:
-    build:
-      context: ./
     container_name: namesilo_letsencrypt_app
+    image: docker.io/z740713651/namesilo-letsencrypt
     stdin_open: true
     tty: true
     restart: unless-stopped
     volumes:
-      - ./config.py:/app/config.py
       - ./letsencrypt:/etc/letsencrypt
+    environment:
+      - wait=60
+      # Change to your namesilo apikey from https://www.namesilo.com/account/api-manager
+      - apikey=apikey
+      - email=me@blue.planet # Write your e-mail. 
+      - domain=example.com # eg. example.com

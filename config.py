@@ -1,4 +1,6 @@
+import os
+
 # Get your API Key from: https://www.namesilo.com/account_api.php
-apikey = "YOUR_API_KEY"
+apikey = os.environv["apikey"]
 # Minutes to wait for DNS changes to complete.
-wait = 60
+wait = os.environv["wait"]

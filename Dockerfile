@@ -4,11 +4,10 @@ RUN apk add certbot certbot-nginx nginx supercronic && \
     pip install tldextract untangle
 
 COPY ./cronjob /usr/local/etc/cronjob
-COPY ./entrypoint.sh /entrypoint.sh
 
 WORKDIR /app
-COPY ./namesilo-letsencrypt-0.9.2/ ./
-COPY ./namesilo-certbot.sh ./
+COPY . ./
+RUN chmod +x /app/entrypoint.sh
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/bin/sh","/app/entrypoint.sh"]
 CMD sh
